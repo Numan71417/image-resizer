@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-black text-white">
+    <div class="flex flex-col gap-3 item-center justify-center w-[70%] px-6 py-2">
+        <h1 class="text-3xl">Image Resizer</h1>
+
+        <input type="file" id="imageInput" accept="image/*">
+        <div class="flex gap-3">
+
+            <input type="number" id="scaleInput" placeholder="Scale Percentage" class="text-black">
+            <button class="bg-slate-500 w-32 rounded" onclick="resizeImage()">Resize</button>
+        </div>
+        <div id="output" class="max-w-[80%]"></div>
+        <button class="bg-slate-500 w-64 rounded" id="downloadButton" onclick="downloadImage()" disabled>Download Resized Image</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
